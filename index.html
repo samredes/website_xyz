@@ -3,224 +3,782 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samredes Secure Systems</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Samredes Secure Systems - Your Partner in Advanced Security & Networking Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light gray background */
-            color: #334155; /* Dark slate gray text */
+        :root {
+            --primary-blue: #007bff; /* A vibrant blue */
+            --dark-blue: #0056b3;
+            --light-grey: #f8f9fa;
+            --dark-grey-footer: #222;
+            --text-color: #333;
+            --heading-color: #003366; /* Darker blue for headings */
+            --gradient-start: #0056b3;
+            --gradient-end: #003366;
         }
-        .nav-link {
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px; /* Adjust as needed for your logo */
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--heading-color);
+            font-weight: 600;
             transition: color 0.3s ease;
         }
-        .nav-link:hover {
-            color: #1d4ed8; /* Darker blue on hover */
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
         }
-        .btn-primary {
-            transition: background-color 0.3s ease, transform 0.2s ease;
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
         }
-        .btn-primary:hover {
-            background-color: #1d4ed8; /* Darker blue on hover */
-            transform: translateY(-2px);
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--heading-color);
+            margin: 4px 0;
+            transition: 0.4s;
         }
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        /* Custom styles for Hero background image */
-        .hero-background {
-            background-image: <img src="services-bg.jpg">; /* Placeholder URL for your background image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
             position: relative;
-            z-index: 0;
+            overflow: hidden;
         }
-        .hero-background::before {
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 1%, transparent 80%);
+            animation: moveGradient 20s infinite linear;
+        }
+
+        @keyframes moveGradient {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-10%, 10%); }
+            50% { transform: translate(0, 0); }
+            75% { transform: translate(10%, -10%); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            font-family: 'Roboto Mono', monospace;
+            opacity: 0.9;
+        }
+
+        .btn {
+            background-color: #fff;
+            color: var(--primary-blue);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light-grey);
+        }
+
+        h2 {
+            font-size: 2.8em;
+            color: var(--heading-color);
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        /* About Us */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8em;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
-            z-index: -1;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card i {
+            font-size: 3em;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover i {
+            color: var(--dark-blue);
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin: 0 15px; /* Spacing between cards */
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1.1em;
+        }
+
+        .slider-nav {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .slider-nav button {
+            background-color: var(--primary-blue);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .slider-nav button:hover {
+            background-color: var(--dark-blue);
+        }
+
+        /* Contact Us */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2em;
+            color: var(--heading-color);
+        }
+
+        .contact-item i {
+            font-size: 1.8em;
+            color: var(--primary-blue);
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: var(--heading-color);
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey-footer); /* Dark grey */
+            color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .footer-section.center {
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #f8f9fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 70px; /* Adjust based on header height */
+                left: 0;
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image {
+                order: -1; /* Puts image above text on mobile */
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
-<body class="antialiased">
-
-    <!-- Header -->
-    <header class="bg-white shadow-sm py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Logo Inclusion -->
-            <a href="#" class="rounded-md">
-                <img src="Logo_Samredes.png" alt="Samredes Secure Systems Logo" class="h-12 md:h-16 rounded-md object-contain">
+<body>
+    <header>
+        <div class="container">
+            <a href="#home" class="logo">
+                <img src="https://via.placeholder.com/40x40/007bff/FFFFFF?text=LOGO" alt="Samredes Secure Systems Logo">
+                Samredes Secure Systems
             </a>
             <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#home" class="nav-link text-gray-700 hover:text-blue-700 font-medium rounded-md">Home</a></li>
-                    <li><a href="#services" class="nav-link text-gray-700 hover:text-blue-700 font-medium rounded-md">Services</a></li>
-                    <li><a href="#about" class="nav-link text-gray-700 hover:text-blue-700 font-medium rounded-md">About Us</a></li>
-                    <li><a href="#contact" class="nav-link text-gray-700 hover:text-blue-700 font-medium rounded-md">Contact</a></li>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
+                <div class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-background text-white py-20 md:py-32 rounded-b-lg">
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-                Your Partner in Advanced Security & Networking Solutions
-            </h1>
-            <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in">
-                Samredes Secure Systems provides cutting-edge solutions in computer networking, CCTV, access control, and biometrics. Secure your future with us.
-            </p>
-            <a href="#services" class="btn-primary bg-white text-blue-700 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-100 inline-block">
-                Explore Our Services
-            </a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-800">Our Comprehensive Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                <!-- Service Card 1: Computer Networking -->
-                <div class="card bg-white p-8 rounded-xl shadow-md text-center border border-gray-200">
-                    <div class="text-blue-600 text-5xl mb-4">
-                        <!-- SVG for Networking -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.715c0-1.01.428-1.977 1.18-2.659l3.059-2.796m0 0 7.5-7.5 2.25 2.25-7.5 7.5m0 0-3.659 3.659M11.25 21V8.44M17.25 21V4.715c0-1.01-.428-1.977-1.18-2.659L12.92 1.06M2.25 21V7.5m1.5 3.75 6 6m1.5 2.25 4.5-4.5M12.75 1.5l3.526 3.526M18 7.5l-1.5-1.5" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Computer Networking</h3>
-                    <p class="text-gray-600">
-                        Design, installation, and maintenance of robust and secure network infrastructures for seamless communication.
-                    </p>
-                </div>
-
-                <!-- Service Card 2: CCTV Installation -->
-                <div class="card bg-white p-8 rounded-xl shadow-md text-center border border-gray-200">
-                    <div class="text-blue-600 text-5xl mb-4">
-                        <!-- SVG for CCTV -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">CCTV Installation</h3>
-                    <p class="text-gray-600">
-                        High-definition surveillance systems for enhanced security and monitoring of your premises, both indoor and outdoor.
-                    </p>
-                </div>
-
-                <!-- Service Card 3: Access Control Systems -->
-                <div class="card bg-white p-8 rounded-xl shadow-md text-center border border-gray-200">
-                    <div class="text-blue-600 text-5xl mb-4">
-                        <!-- SVG for Access Control -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Access Control Systems</h3>
-                    <p class="text-gray-600">
-                        Manage and restrict entry to sensitive areas with advanced keycard, biometric, or keypad access solutions.
-                    </p>
-                </div>
-
-                <!-- Service Card 4: Biometrics Installation -->
-                <div class="card bg-white p-8 rounded-xl shadow-md text-center border border-gray-200">
-                    <div class="text-blue-600 text-5xl mb-4">
-                        <!-- SVG for Biometrics -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Biometrics Installation</h3>
-                    <p class="text-gray-600">
-                        Secure and efficient identification using fingerprint, facial recognition, or iris scanning technologies.
-                    </p>
-                </div>
-
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Samredes Secure Systems</h1>
+                <p>Your Partner in Advanced Security & Networking Solutions</p>
+                <a href="#services" class="btn">Explore Our Services</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-800">About Samredes Secure Systems</h2>
-            <p class="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                At Samredes Secure Systems, we are dedicated to providing top-tier security and networking solutions tailored to meet the unique needs of our clients. With years of experience and a team of certified professionals, we ensure reliable, innovative, and cost-effective services. Our commitment is to your peace of mind, delivering systems that protect your assets and streamline your operations.
-            </p>
-            <p class="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mt-4">
-                We pride ourselves on our customer-centric approach, offering personalized consultations, seamless installations, and continuous support. Choose Samredes for unparalleled expertise and a secure future.
-            </p>
-        </div>
-    </section>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Dedicated to Your Security & Connectivity</h3>
+                        <p>Welcome to Samredes Secure Systems, your trusted partner in cutting-edge security and networking solutions. Since our inception in **2019**, we have been committed to delivering unparalleled services that empower businesses and individuals with robust, reliable, and innovative technology.</p>
+                        <p>Our journey began with a clear vision: to bridge the gap between complex technological challenges and accessible, effective solutions. We pride ourselves on a team of highly skilled and certified professionals who are passionate about staying ahead of industry trends and applying the latest advancements to your specific needs.</p>
+                        <p>At Samredes, we understand that security and connectivity are not just about hardware and software; they are about peace of mind, operational efficiency, and future-proofing your investments. We work closely with our clients, offering personalized consultations and tailor-made solutions that address unique requirements, ensuring a seamless and secure environment.</p>
+                        <p>Our proven track record of successful implementations and satisfied clients speaks to our dedication to quality, integrity, and customer satisfaction. Choose Samredes Secure Systems for solutions that are not only technologically superior but also built on a foundation of trust and excellence.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/400x300/007bff/FFFFFF?text=About+Image" alt="About Samredes">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-800">Get In Touch</h2>
-            <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
-                <p class="text-center text-gray-700 mb-6">
-                    Have questions or need a quote? Fill out the form below or reach out to us directly.
-                </p>
-                <form action="#" method="POST" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Your Name" required>
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Comprehensive Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Computer Networking</h3>
+                        <p>Design, installation, and maintenance of robust and secure network infrastructures for seamless communication and optimal performance.</p>
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="your.email@example.com" required>
+                    <div class="service-card">
+                        <i class="fas fa-video"></i>
+                        <h3>CCTV Installation</h3>
+                        <p>High-definition surveillance systems for enhanced security and monitoring of your premises, both indoor and outdoor, with remote access capabilities.</p>
                     </div>
-                    <div>
-                        <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
-                        <input type="text" id="subject" name="subject" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Service Inquiry" required>
+                    <div class="service-card">
+                        <i class="fas fa-door-open"></i>
+                        <h3>Access Control Systems</h3>
+                        <p>Manage and restrict entry to sensitive areas with advanced keycard, biometric, or keypad access solutions, providing granular control and audit trails.</p>
                     </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="5" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Tell us about your needs..." required></textarea>
+                    <div class="service-card">
+                        <i class="fas fa-fingerprint"></i>
+                        <h3>Biometrics Installation</h3>
+                        <p>Secure and efficient identification using cutting-edge fingerprint, facial recognition, or iris scanning technologies for enhanced security and convenience.</p>
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn-primary bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium shadow-md hover:bg-blue-700">
-                            Send Message
-                        </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial-wrapper" id="testimonial-wrapper">
+                        <div class="testimonial-card">
+                            <p>"Samredes Secure Systems transformed our office network. It's incredibly fast and reliable now. Their team was professional and efficient from start to finish."</p>
+                            <div class="author">- Jane Doe, CEO of TechCorp</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p>"The CCTV system installed by Samredes gives us immense peace of mind. The clarity is exceptional, and their support has been fantastic."</p>
+                            <div class="author">- John Smith, Property Manager</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p>"We've been using their biometric access control for months, and it's flawless. Highly recommend Samredes for anyone looking for top-tier security solutions."</p>
+                            <div class="author">- Emily White, Operations Director</div>
+                        </div>
                     </div>
-                </form>
-                <div class="mt-8 text-center text-gray-600">
-                    <p><strong>Phone:</strong> +254 725 018 360</p>
-                    <p><strong>Email:</strong> samredesystems@gmail.com</p>
-                    <p><strong>Location:</strong> Nairobi, Kenya</p>
+                    <div class="slider-nav">
+                        <button id="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                        <button id="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email: <a href="mailto:info@samredes.com">info@samredes.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Phone: <a href="tel:+254712345678">+254 712 345 678</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Location: 123 Secure Lane, Nairobi, Kenya</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Samredes Secure Systems</h3>
+                <p>Your Partner in Advanced Security & Networking Solutions. Delivering excellence since 2019.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section center">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/yourcompany" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/yourcompany" target="_blank" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 rounded-t-lg">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Samredes Secure Systems. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#home" class="text-gray-400 hover:text-white text-sm">Home</a>
-                <a href="#services" class="text-gray-400 hover:text-white text-sm">Services</a>
-                <a href="#about" class="text-gray-400 hover:text-white text-sm">About Us</a>
-                <a href="#contact" class="text-gray-400 hover:text-white text-sm">Contact</a>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Samredes Secure Systems. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                const navMenu = document.getElementById('nav-menu');
+                const hamburger = document.getElementById('hamburger');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Testimonial Slider functionality
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const totalTestimonials = testimonials.length;
+        const testimonialWrapper = document.getElementById('testimonial-wrapper');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+
+        function showTestimonial(index) {
+            if (index >= totalTestimonials) {
+                currentTestimonial = 0;
+            } else if (index < 0) {
+                currentTestimonial = totalTestimonials - 1;
+            } else {
+                currentTestimonial = index;
+            }
+            const offset = -currentTestimonial * 100; // Assuming each card takes 100% width
+            testimonialWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            showTestimonial(currentTestimonial - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showTestimonial(currentTestimonial + 1);
+        });
+
+        // Initialize testimonial display
+        showTestimonial(currentTestimonial);
+
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
