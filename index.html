@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samredes Secure Systems</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Dark slate gray text */
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #1d4ed8; /* Darker blue on hover */
+        }
+        .btn-primary {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8; /* Darker blue on hover */
+            transform: translateY(-2px);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        /* Custom styles for Hero background image */
+        .hero-background {
+            background-image: url('https://placehold.co/1920x800/000000/FFFFFF?text=YOUR+BACKGROUND+IMAGE+HERE'); /* Placeholder URL for your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 0;
+        }
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo Inclusion -->
+            <a href="#" class="rounded-md">
+                <img src="https://placehold.co/200x50/E0E7FF/1D4ED8?text=Your+Logo+Here" alt="Samredes Secure Systems Logo" class="h-12 md:h-16 rounded-md object-contain">
+            </a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="nav-link text-gray-700 hover:text-blue-700 font-medium rounded-md">Home</a></li>
+                    <li><a href="#services" class="nav-link text-gray-700 hover:text-blue-700 font-medium rounded-md">Services</a></li>
+                    <li><a href="#about" class="nav-link text-gray-700 hover:text-blue-700 font-medium rounded-md">About Us</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-700 hover:text-blue-700 font-medium rounded-md">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-background text-white py-20 md:py-32 rounded-b-lg">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                Your Partner in Advanced Security & Networking Solutions
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in">
+                Samredes Secure Systems provides cutting-edge solutions in computer networking, CCTV, access control, and biometrics. Secure your future with us.
+            </p>
+            <a href="#services" class="btn-primary bg-white text-blue-700 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-100 inline-block">
+                Explore Our Services
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-800">Our Comprehensive Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Service Card 1: Computer Networking -->
+                <div class="card bg-white p-8 rounded-xl shadow-md text-center border border-gray-200">
+                    <div class="text-blue-600 text-5xl mb-4">
+                        <!-- SVG for Networking -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.715c0-1.01.428-1.977 1.18-2.659l3.059-2.796m0 0 7.5-7.5 2.25 2.25-7.5 7.5m0 0-3.659 3.659M11.25 21V8.44M17.25 21V4.715c0-1.01-.428-1.977-1.18-2.659L12.92 1.06M2.25 21V7.5m1.5 3.75 6 6m1.5 2.25 4.5-4.5M12.75 1.5l3.526 3.526M18 7.5l-1.5-1.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Computer Networking</h3>
+                    <p class="text-gray-600">
+                        Design, installation, and maintenance of robust and secure network infrastructures for seamless communication.
+                    </p>
+                </div>
+
+                <!-- Service Card 2: CCTV Installation -->
+                <div class="card bg-white p-8 rounded-xl shadow-md text-center border border-gray-200">
+                    <div class="text-blue-600 text-5xl mb-4">
+                        <!-- SVG for CCTV -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">CCTV Installation</h3>
+                    <p class="text-gray-600">
+                        High-definition surveillance systems for enhanced security and monitoring of your premises, both indoor and outdoor.
+                    </p>
+                </div>
+
+                <!-- Service Card 3: Access Control Systems -->
+                <div class="card bg-white p-8 rounded-xl shadow-md text-center border border-gray-200">
+                    <div class="text-blue-600 text-5xl mb-4">
+                        <!-- SVG for Access Control -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Access Control Systems</h3>
+                    <p class="text-gray-600">
+                        Manage and restrict entry to sensitive areas with advanced keycard, biometric, or keypad access solutions.
+                    </p>
+                </div>
+
+                <!-- Service Card 4: Biometrics Installation -->
+                <div class="card bg-white p-8 rounded-xl shadow-md text-center border border-gray-200">
+                    <div class="text-blue-600 text-5xl mb-4">
+                        <!-- SVG for Biometrics -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Biometrics Installation</h3>
+                    <p class="text-gray-600">
+                        Secure and efficient identification using fingerprint, facial recognition, or iris scanning technologies.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-800">About Samredes Secure Systems</h2>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                At Samredes Secure Systems, we are dedicated to providing top-tier security and networking solutions tailored to meet the unique needs of our clients. With years of experience and a team of certified professionals, we ensure reliable, innovative, and cost-effective services. Our commitment is to your peace of mind, delivering systems that protect your assets and streamline your operations.
+            </p>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mt-4">
+                We pride ourselves on our customer-centric approach, offering personalized consultations, seamless installations, and continuous support. Choose Samredes for unparalleled expertise and a secure future.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-800">Get In Touch</h2>
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                <p class="text-center text-gray-700 mb-6">
+                    Have questions or need a quote? Fill out the form below or reach out to us directly.
+                </p>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="your.email@example.com" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                        <input type="text" id="subject" name="subject" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Service Inquiry" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="5" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Tell us about your needs..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium shadow-md hover:bg-blue-700">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-8 text-center text-gray-600">
+                    <p><strong>Phone:</strong> +254 7XX XXX XXX</p>
+                    <p><strong>Email:</strong> info@samredessecuresystems.com</p>
+                    <p><strong>Address:</strong> Your Company Address, City, Country</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Samredes Secure Systems. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#home" class="text-gray-400 hover:text-white text-sm">Home</a>
+                <a href="#services" class="text-gray-400 hover:text-white text-sm">Services</a>
+                <a href="#about" class="text-gray-400 hover:text-white text-sm">About Us</a>
+                <a href="#contact" class="text-gray-400 hover:text-white text-sm">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
